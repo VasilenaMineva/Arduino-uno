@@ -1,0 +1,37 @@
+int ledPinR=11;
+int ledPinY=9;
+int ledPinG=10;
+
+void setup() {
+  pinMode(ledPinR,OUTPUT);
+   pinMode(ledPinY,OUTPUT);
+    pinMode(ledPinG,OUTPUT);
+   Serial.begin(9600);
+}
+
+void loop() {
+  if(Serial.available()>0){
+  }
+  char key=Serial.read();  
+  if(key == '1'){
+    digitalWrite(ledPinR,HIGH);
+  digitalWrite(ledPinY,LOW);
+  digitalWrite(ledPinG,LOW);
+  }
+  else if(key == '2'){
+    digitalWrite(ledPinR,LOW);
+  digitalWrite(ledPinY,HIGH);
+  digitalWrite(ledPinG,LOW);
+  }
+  else if(key == '3'){
+   digitalWrite(ledPinR,LOW);
+  digitalWrite(ledPinY,LOW);
+  digitalWrite(ledPinG,HIGH);
+  }
+  else if(key == '4'){
+    digitalWrite(ledPinR,LOW);
+  digitalWrite(ledPinY,HIGH);
+  digitalWrite(ledPinG,LOW);
+  delay(1000);
+  digitalWrite(ledPinY, LOW);
+  }
